@@ -1,5 +1,5 @@
 services:
-  web2:
+  web:
     image: shinsenter/php:8.0-fpm-apache-alpine
     environment:
       DEBUG: "1"
@@ -9,9 +9,8 @@ services:
       PHP_SESSION_COOKIE_HTTPONLY: "1"
       APP_UID: "1000"
       APP_GID: "1000"
-  ports:
-    - 3680:80
-    - 3643:443
-
+    ports:
+      - 3680:80
+      - 3643:443
     volumes:
-      - ./otro-dist:/var/www/html/
+      - ./dist:/var/www/html/
